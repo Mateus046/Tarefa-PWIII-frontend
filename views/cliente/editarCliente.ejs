@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs') %>
+
+<body>
+
+    <div class="container">
+
+        <%- include('../partials/menu.ejs') %>
+
+        <div class="card">
+
+            <div class="card-header">
+                <h3>Editar cliente</h3>
+                <%= cliente.data.nome_cliente  %>
+            </div>
+
+            <div class="card-body">
+
+                <form action="/editarCliente" method="post">
+
+                    <label for="nome_cliente"></label>
+                    <input 
+                    class="form-control" type="text" 
+                    name="nome_cliente" id="nome_cliente"
+                    value="<%= cliente.data.nome_cliente  %>">
+                    <input 
+                    type="hidden"
+                    name="cod_cliente"
+                    value=" <%= cliente.data.cod_cliente  %>">
+
+                    <button class="btn btn-success mt-2">Editar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<%- include('../partials/footer.ejs') %>
+
+</html>
