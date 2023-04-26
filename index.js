@@ -27,12 +27,12 @@ app.get('/clientes', (req, res)=>{
 
 //lista 
 app.get('/listagemClientes', (req, res)=>{
-    const urlListarCategoria = 'http://localhost:3000/listarCliente';
+    const urlListarCliente = 'http://localhost:3000/listarCliente';
 
 
     //chamada do back
 
-    axios.get(urlListarCategoria)
+    axios.get(urlListarCliente)
     .then((response)=>{
 
         console.log(response.data);
@@ -46,16 +46,16 @@ app.get('/listagemClientes', (req, res)=>{
 
 app.get('/editarCliente/:cod_cliente', (req, res)=>{
 
-    let{cod_categoria} = req.params
+    let{cod_Cliente} = req.params
 
-    urlListarCategoriaPK = `http://localhost:3000/listaClientePK/${cod_cliente}`;
+    urlListaClientePK = `http://localhost:3000/listaClientePK/${cod_Cliente}`;
 
 
     
     axios.get(urlListaClientePK)
     .then((response)=>{
-    let categoria = response.data;
-    res.render('cliente/editarCliente.ejs',{categoria})
+    let cliente = response.data;
+    res.render('cliente/editarCliente.ejs',{cliente})
 });
 
 });
@@ -72,6 +72,18 @@ app.post('/editarCliente', (req,res)=>{
 
     });
 })
+app.get('/excluirCliente/:cod_Cliente', (req, res)=>{
+
+    let {cod_Cliente} = req.params;
+
+    const urlExcluirCliente = `http://localhost:3000/excluirCliente/${cod_Cliente}`
+
+    axios.delete(urlExcluirCliente)
+    .then((response)=>{
+        res.send('Cliente Excluido');
+    });
+
+});
 //fim das configurações
 
 

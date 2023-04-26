@@ -1,8 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 
-    
-  <div class="container">
+    <div class="container">
 
     <%- include('../partials/menu.ejs') %>
 
@@ -15,18 +14,23 @@
     %>
     
     <div class="card mt-2 p-1">
+
         <div class="card-body">
             <%= clientes.nome_Cliente %>
         </div>
     
     </div>
-            
-            
-    <% }) %>
+    
+    <div class="btn-group mr-2">
+        <a href="/editarCliente/<%= clientes.cod_Cliente %>" class="btn btn-success btn-sm mr-2 ml-2">EDITAR</a>
+        <a href="/excluirCliente/<%= clientes.cod_Cliente %>" class="btn btn-danger btn-sm mr-2 ml-2">EXCLUIR</a>
+    </div>
+
+</div>
+             <% }) %>
 
 </div>
 
-</body>
 <%- include('../partials/footer.ejs') %>
 
 </html>

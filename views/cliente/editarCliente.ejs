@@ -10,22 +10,22 @@
 
             <div class="card-header">
                 <h3>Editar cliente</h3>
-                <%= cliente.data.nome_cliente  %>
+                <%= cliente.data.nome_Cliente  %>
             </div>
 
             <div class="card-body">
 
                 <form action="/editarCliente" method="post">
 
-                    <label for="nome_cliente"></label>
+                    <label for="nome_Cliente"></label>
                     <input 
                     class="form-control" type="text" 
-                    name="nome_cliente" id="nome_cliente"
-                    value="<%= cliente.data.nome_cliente  %>">
+                    name="nome_cliente" id="nome_Cliente"
+                    value="<%= cliente.data.nome_Cliente  %>">
                     <input 
                     type="hidden"
-                    name="cod_cliente"
-                    value=" <%= cliente.data.cod_cliente  %>">
+                    name="cod_Cliente"
+                    value=" <%= cliente.data.cod_Cliente  %>">
 
                     <button class="btn btn-success mt-2">Editar</button>
 
